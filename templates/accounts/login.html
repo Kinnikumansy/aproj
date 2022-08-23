@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create Account | MyAccount AHS</title>
+    
+    <!-- <header>
+      <a href="https://www.ahs.com/">
+        <img
+          src="https://cdn.frontdoorhome.com/iam-fusionauth/prod/static/images/ahs-logo.svg"
+          alt="logo"
+        />
+      </a>
+    </header> -->
+
+    <div>
+      <div class="content">
+        <h3 class="content-header">Register for MyAccount</h3>
+
+        <form action="register" method="POST" class="full">
+          <input
+            type="hidden"
+            name="client_id"
+            value="d51d8f50-21db-4658-b87c-cd69327ddeb7"
+          />
+          <input
+            type="hidden"
+            name="code_challenge"
+            value="E9p0HLqA09Rru_vbpUKgTwB30YPJDs4h862Nc5Wwwdg"
+          />
+          <input type="hidden" name="code_challenge_method" value="S256" />
+          <input
+            type="hidden"
+            name="metaData.device.name"
+            value="macOS Safari"
+          />
+          <input type="hidden" name="metaData.device.type" value="BROWSER" />
+          <input type="hidden" name="nonce" value="" />
+          <input
+            type="hidden"
+            name="redirect_uri"
+            value="https://myaccount.ahs.com/login"
+          />
+          <input type="hidden" name="response_mode" value="query" />
+          <input type="hidden" name="response_type" value="code" />
+          <input type="hidden" name="scope" value="openid email profile" />
+          <input
+            type="hidden"
+            name="state"
+            value="ea6d60d362bf400c83000f6daf54e14e"
+          />
+          <input
+            type="hidden"
+            name="tenantId"
+            value="e48665ad-e5ca-4610-a9b0-b38757d8e2e1"
+          />
+          <input type="hidden" name="timezone" value="Asia/Hong_Kong" />
+          <input type="hidden" name="user_code" value="" />
+          <input type="hidden" name="collectBirthDate" value="false" />
+          <input type="hidden" name="parentEmailRequired" value="false" />
+          <input type="hidden" name="user.birthDate" value="" />
+          <input
+            type="hidden"
+            name="user.birthDate@dateTimeFormat"
+            value="yyyy-MM-dd"
+          />
+
+          <div class="form-row">
+            <label for="email"><span class="required">*</span> Email</label>
+            <input
+              id="email"
+              type="text"
+              name="user.email"
+              value=""
+              class=""
+              autocapitalize="none"
+              autocomplete="username"
+              autocorrect="off"
+              spellcheck="false"
+              autofocus="autofocus"
+              placeholder="jsmith@gmail.com"
+            />
+            <div
+              id="email-is-invalid"
+              class="validation-rule invalid email-is-invalid single-validation"
+            >
+              Invalid Email
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="password"
+              ><span class="required">*</span> Create Password</label
+            >
+            <input
+              id="password"
+              type="password"
+              name="user.password"
+              class=""
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+              placeholder="Create password"
+            />
+            <div
+              id="toggle-password-visible"
+              class="toggle-password-visible"
+            ></div>
+          </div>
+          <div id="capslock-on" class="capslock-on small-notice">
+            Caps Lock is on
+          </div>
+          <div id="password-requirements" class="password-requirements">
+            <p>Your password must have:</p>
+            <div class="validation-rule neutral" id="password-length">
+              8 to 64 characters
+            </div>
+            <div class="validation-rule neutral" id="password-letters">
+              Upper and lower case letters
+            </div>
+            <div class="validation-rule neutral" id="password-digit">
+              A number
+            </div>
+            <div class="validation-rule neutral" id="password-special">
+              A special character (e.g. ! # $)
+            </div>
+          </div>
+          <div id="password-is-strong" class="password-is-strong small-notice">
+            This is a strong password
+          </div>
+
+          <div>
+            <button class="primary" id="register-button">Create Account</button>
+          </div>
+        </form>
+
+        <div class="content-divider"></div>
+
+        <div>
+          <p class="light-text">Already have an account?</p>
+          <a
+            class=""
+            id=""
+            href="authorize?tenantId=e48665ad-e5ca-4610-a9b0-b38757d8e2e1&client_id=d51d8f50-21db-4658-b87c-cd69327ddeb7&nonce=&redirect_uri=https%3A%2F%2Fmyaccount.ahs.com%2Flogin&response_mode=query&response_type=code&scope=openid%20email%20profile&state=ea6d60d362bf400c83000f6daf54e14e&timezone=Asia%2FHong_Kong&metaData.device.name=macOS%20Safari&metaData.device.type=BROWSER&code_challenge=E9p0HLqA09Rru_vbpUKgTwB30YPJDs4h862Nc5Wwwdg&code_challenge_method=S256&user_code="
+          >
+            <button class="secondary" id="login-btn">
+              Log in to Your Account
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  button {
+    background-color: #003e68;
+    border-color: #003e68;
+  }
+
+  button.secondary {
+    color: #003e68;
+    border: 2px solid #003e68;
+  }
+
+  .forgot-password-link {
+    color: #003e68;
+  }
+
+  .re-portal-link {
+    color: #003e68;
+  }
+
+  .employee-login a {
+    color: #003e68;
+    font-weight: 500;
+  }
+
+  .toggle-password-visible {
+    background-image: url("data:image/svg+xml,%3Csvg enable-background='new -0.709 -32.081 141.732 141.732' height='141.732px' fill='%23003E68' id='Livello_1' version='1.1' viewBox='-0.709 -32.081 141.732 141.732' width='141.732px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Livello_80'%3E%3Cpath d='M89.668,38.786c0-10.773-8.731-19.512-19.51-19.512S50.646,28.01,50.646,38.786c0,10.774,8.732,19.511,19.512,19.511 C80.934,58.297,89.668,49.561,89.668,38.786 M128.352,38.727c-13.315,17.599-34.426,28.972-58.193,28.972 c-23.77,0-44.879-11.373-58.194-28.972C25.279,21.129,46.389,9.756,70.158,9.756C93.927,9.756,115.036,21.129,128.352,38.727 M140.314,38.76C125.666,15.478,99.725,0,70.158,0S14.648,15.478,0,38.76c14.648,23.312,40.591,38.81,70.158,38.81 S125.666,62.072,140.314,38.76'/%3E%3C/g%3E%3Cg id='Livello_1_1_'/%3E%3C/svg%3E");
+  }
+</style>
+
+<style>
+  @keyframes rotate360 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  header {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  header img {
+    max-height: 60px;
+    max-width: 250px;
+  }
+
+  .content {
+    max-width: 450px;
+    margin: auto;
+    padding: 32px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #9e9e9e;
+    font-weight: 300;
+  }
+
+  .form-row {
+    margin: 24px 0;
+    position: relative;
+  }
+
+  .content-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  button {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  button.primary {
+    color: #ffffff;
+  }
+
+  button.secondary {
+    background-color: #ffffff;
+  }
+
+  .btn-loading {
+    cursor: default;
+    padding-left: 10px;
+    pointer-events: none;
+  }
+
+  .btn-loading::before {
+    animation: rotate360 0.8s infinite linear;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-left-color: #ffffff;
+    border-radius: 50%;
+    content: attr(data);
+    display: inline-block;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: -2px;
+    vertical-align: middle;
+    width: 20px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .content-divider {
+    border-bottom: 2px solid #e7e7e7;
+    margin: 36px 0;
+  }
+
+  p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    color: #636363;
+  }
+
+  .forgot-password-link {
+    display: inline-block;
+  }
+
+  .toggle-password-visible {
+    position: absolute;
+    top: 33px;
+    right: 12px;
+    cursor: pointer;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 25px;
+  }
+
+  #email-is-invalid {
+    display: none;
+  }
+
+  span.error {
+    color: #ef3829;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .agree-to-terms-container {
+    margin-bottom: 24px;
+    display: flex;
+    position: relative;
+  }
+
+  .agree-to-terms-container label {
+    font-weight: 300;
+  }
+
+  .agree-to-terms-container input {
+    margin-right: 12px;
+  }
+
+  .agree-to-terms-error {
+    display: none;
+    position: absolute;
+    bottom: -18px;
+    left: 4px;
+    font-size: 12px;
+    color: #ef3829;
+  }
+
+  div.error {
+    display: flex;
+    flex-direction: column;
+    border-left: 8px solid #d3302e;
+    max-width: 430px;
+    margin: auto;
+    padding: 24px 48px;
+    margin-top: 12px;
+    box-shadow: 0 6px 9px 1px rgba(0, 0, 0, 0.17);
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/prod/static/images/warning-icon.png);
+    background-repeat: no-repeat;
+    background-position: 16px 35px;
+    background-size: 22px;
+    font-size: 15px;
+  }
+
+  div.info {
+    display: flex;
+    max-width: 430px;
+    margin: auto;
+    padding: 24px 30px;
+    margin-top: 12px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+  }
+
+  div.info::before {
+    filter: brightness(0);
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/prod/static/images/info-circle.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    content: attr(data);
+    height: 20px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    right: 5px;
+  }
+
+  .error-link {
+    color: #2774ae;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+
+  .lower-login-inputs {
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+  }
+
+  .remember-me-container {
+    display: flex;
+    align-items: center;
+    height: 14px;
+    width: 110px;
+    justify-content: space-between;
+  }
+
+  .remember-me-text {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  /* branded footer styles */
+
+  .branded-footer-link {
+    color: #2774ae;
+    font-size: 14px;
+  }
+
+  .branded-footer-phone-container {
+    display: none;
+  }
+
+  .branded-footer-link {
+    margin-right: 6px;
+  }
+
+  @media only screen and (min-width: 450px) {
+    .branded-footer-container {
+      display: flex;
+      justify-content: space-between;
+      bottom: 0;
+      padding: 12px 48px;
+    }
+
+    .branded-footer-split {
+      display: none;
+    }
+
+    .branded-footer-link {
+      color: #202a45;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .branded-footer-phone-container {
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #e3e3e3;
+      padding: 0 24px;
+      color: #2774ae;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .branded-footer-right-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .branded-footer-copyright {
+      display: none;
+    }
+
+    .branded-footer-link {
+      margin-right: 24px;
+    }
+  }
+
+  /* end branded footer styles */
+</style>
+
+<script>
+  function togglePasswordVisible() {
+    var pwInput = document.getElementById("password");
+    if (pwInput.type === "password") {
+      pwInput.type = "text";
+    } else {
+      pwInput.type = "password";
+    }
+  }
+
+  function togglePasswordConfirmVisible() {
+    var pwInput = document.getElementById("passwordConfirm");
+    if (pwInput.type === "password") {
+      pwInput.type = "text";
+    } else {
+      pwInput.type = "password";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var pwToggle = document.getElementById("toggle-password-visible");
+    pwToggle.addEventListener("click", togglePasswordVisible);
+    var pwConfirmToggle = document.getElementById(
+      "toggle-password-confirm-visible"
+    );
+    pwConfirmToggle &&
+      pwConfirmToggle.addEventListener(
+        "click",
+        togglePasswordConfirmVisible
+      );
+  });
+</script>
+<style>
+  .password-requirements {
+    font-family: proxima-nova, sans-serif;
+    color: #474747;
+    font-weight: 300;
+    font-size: 14px;
+    display: none;
+    margin: -12px 0 12px 0;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    max-width: 450px;
+    z-index: 5;
+    padding-bottom: 5px;
+  }
+
+  .password-requirements p {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .validation-rule {
+    height: 28px;
+    background-size: 20px;
+    padding-left: 28px;
+    background-position: left center;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+  }
+
+  .validation-rule.neutral {
+    color: #8a8a8a;
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/dev/static/images/grey-circle.svg);
+  }
+
+  .validation-rule.invalid {
+    color: #ef3829;
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/dev/static/images/exclamation-circle.svg);
+  }
+
+  .validation-rule.valid {
+    color: #383838;
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/dev/static/images/check-circle.svg);
+  }
+
+  .small-notice {
+    display: none;
+    font-size: 10px;
+    background-repeat: no-repeat;
+    padding: 3px 0 0 18px;
+    background-position: left center;
+    background-size: 14px;
+    margin: -20px 0 12px 0;
+    height: 15px;
+    position: absolute;
+  }
+
+  .password-is-strong {
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/dev/static/images/check-circle.svg);
+  }
+
+  .capslock-on {
+    color: #8a8a8a;
+    background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/dev/static/images/info-circle.svg);
+  }
+
+  .single-validation {
+    display: none;
+    font-weight: 300;
+    font-size: 14px;
+  }
+</style>
+<script>
+  function validatePassword(value) {
+    var errors = [];
+
+    if (value.length === 0) {
+      errors.push("novalue");
+    }
+    if (value.length < 8 || value.length > 64) {
+      errors.push("length");
+    }
+    if (value.toUpperCase() === value || value.toLowerCase() === value) {
+      errors.push("letters");
+    }
+    if (!/\d/.test(value)) {
+      errors.push("digit");
+    }
+    if (!/[~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(value)) {
+      errors.push("special");
+    }
+    return errors;
+  }
+
+  function setValidity(element, className) {
+    var classes = ["neutral", "valid", "invalid"];
+    for (var cls of classes.filter(function (cn) {
+      return cn !== className;
+    })) {
+      element.classList.remove(cls);
+    }
+    element.classList.add(className);
+  }
+
+  function handleKeyup(event) {
+    var value = event.target.value;
+    var length = document.getElementById("password-length");
+    var letters = document.getElementById("password-letters");
+    var digit = document.getElementById("password-digit");
+    var special = document.getElementById("password-special");
+    var caps = document.getElementById("capslock-on");
+
+    event.getModifierState("CapsLock")
+      ? (caps.style.display = "block")
+      : (caps.style.display = "none");
+
+    var errors = validatePassword(value);
+    var lengthValidity = errors.includes("length") ? "neutral" : "valid";
+    setValidity(length, lengthValidity);
+    var lettersValidity = errors.includes("letters") ? "neutral" : "valid";
+    setValidity(letters, lettersValidity);
+    var digitValidity = errors.includes("digit") ? "neutral" : "valid";
+    setValidity(digit, digitValidity);
+    var specialValidity = errors.includes("special") ? "neutral" : "valid";
+    setValidity(special, specialValidity);
+
+    var rules = document.getElementById("password-requirements");
+    var strong = document.getElementById("password-is-strong");
+    if (!errors.length) {
+      console.log("no errors");
+      rules.style.display = "none";
+      strong.style.display = "block";
+    } else {
+      console.log("errors: ", errors);
+      rules.style.display = "block";
+      strong.style.display = "none";
+    }
+  }
+
+  function handleBlur(event) {
+    var value = event.target.value;
+    var rules = document.getElementById("password-requirements");
+    var strong = document.getElementById("password-is-strong");
+    var length = document.getElementById("password-length");
+    var letters = document.getElementById("password-letters");
+    var digit = document.getElementById("password-digit");
+    var special = document.getElementById("password-special");
+    var caps = document.getElementById("capslock-on");
+
+    var errors = validatePassword(value);
+    if (errors.includes("novalue")) {
+      rules.style.display = "none";
+      caps.style.display = "none";
+      return;
+    }
+    var lengthValidity = errors.includes("length") ? "invalid" : "valid";
+    setValidity(length, lengthValidity);
+    var lettersValidity = errors.includes("letters") ? "invalid" : "valid";
+    setValidity(letters, lettersValidity);
+    var digitValidity = errors.includes("digit") ? "invalid" : "valid";
+    setValidity(digit, digitValidity);
+    var specialValidity = errors.includes("special") ? "invalid" : "valid";
+    setValidity(special, specialValidity);
+    if (!errors.length) {
+      rules.style.display = "none";
+      strong.style.display = "block";
+      caps.style.display = "none";
+    }
+  }
+
+  function showRules(event) {
+    var value = event.target.value;
+    var errors = validatePassword(value);
+    if (errors.length) {
+      var rules = document.getElementById("password-requirements");
+      var strong = document.getElementById("password-is-strong");
+      strong.style.display = "none";
+      rules.style.display = "block";
+    }
+  }
+
+  function validateEmail(value) {
+    var blacklist = [
+      `"`,
+      `(`,
+      `)`,
+      `,`,
+      `:`,
+      `;`,
+      `<`,
+      `>`,
+      `[`,
+      `\\`,
+      `]`,
+      `/`,
+      `{`,
+      `}`,
+      `+`,
+      `=`,
+      `&`,
+      `^`,
+      `%`,
+      `$`,
+      `#`,
+      `!`,
+      `~`,
+      `\``,
+      `'`,
+      `?`,
+      `*`,
+      `|`,
+    ];
+    for (let char of blacklist) {
+      if (value.indexOf(char) > -1) {
+        return false;
+      }
+    }
+    var re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(value).toLowerCase());
+  }
+
+  function validateConfirmPassword() {
+    var pwConfirmInput = document.getElementById("passwordConfirm");
+    if (!pwConfirmInput) {
+      return true;
+    }
+    var pwInput = document.getElementById("password");
+    var pwConfirmInput = document.getElementById("passwordConfirm");
+    return pwInput.value === pwConfirmInput.value;
+  }
+
+  function handleEmailFocus() {
+    var emailIsInvalid = document.getElementById("email-is-invalid");
+    emailIsInvalid.style.display = "none";
+  }
+
+  function handleEmailBlur(event) {
+    var email = event.target.value;
+    var emailIsInvalid = document.getElementById("email-is-invalid");
+    if (email.length && !validateEmail(email)) {
+      emailIsInvalid.style.display = "flex";
+    }
+  }
+
+  function handleFormSubmit(event) {
+    // get email and pw values
+    var pwInput = document.getElementById("password");
+    var emailInput = document.getElementById("email");
+
+    // trim leading or trailing whitespace
+    if (pwInput) {
+      pwInput.value = pwInput.value.trim();
+    }
+    if (emailInput) {
+      emailInput.value = emailInput.value.trim();
+    }
+
+    // validate values
+    var emailIsValid = emailInput ? validateEmail(emailInput.value) : true;
+    var pwIsValid = pwInput
+      ? validatePassword(pwInput.value).length === 0
+      : true;
+    var passwordsMatch = validateConfirmPassword();
+
+    if (!emailIsValid) {
+      var emailIsInvalid = document.getElementById("email-is-invalid");
+      emailIsInvalid.style.display = "flex";
+    }
+
+    if (!pwIsValid) {
+      var rules = document.getElementById("password-requirements");
+      rules.style.display = "block";
+    }
+
+    // ensure agreement to terms
+    var agreeToTermsInput = document.getElementById(
+      "agree-to-terms-checkbox"
+    );
+    var hasAgreedToTerms = agreeToTermsInput
+      ? agreeToTermsInput.checked
+      : true;
+    if (!hasAgreedToTerms) {
+      document.getElementById("agree-to-terms-error").style.display =
+        "block";
+    }
+
+    // if either is invalid prevent form submission
+    if (
+      !emailIsValid ||
+      !pwIsValid ||
+      !passwordsMatch ||
+      !hasAgreedToTerms
+    ) {
+      event.preventDefault();
+    }
+  }
+
+  function handleConfirmBlur(event) {
+    var confirmIsInvalid = document.getElementById("confirm-is-invalid");
+    confirmIsInvalid.style.display = validateConfirmPassword()
+      ? "none"
+      : "flex";
+  }
+
+  function handleConfirmFocus(event) {
+    var confirmIsInvalid = document.getElementById("confirm-is-invalid");
+    confirmIsInvalid.style.display = "none";
+  }
+
+  function handleClickAgreeToTerms() {
+    document.getElementById("agree-to-terms-error").style.display = "none";
+  }
+
+  function handleChangePasswordGA() {
+    CustomUtagLink({
+      event_category: "My Account",
+      event_action: "Reset Password Success",
+      event_label: "Successfully Reset Password",
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var emailInput = document.getElementById("email");
+    if (emailInput) {
+      emailInput.addEventListener("blur", handleEmailBlur);
+      emailInput.addEventListener("focus", handleEmailFocus);
+    }
+
+    var pwInput = document.getElementById("password");
+    if (pwInput) {
+      pwInput.addEventListener("focus", showRules);
+      pwInput.addEventListener("blur", handleBlur);
+      pwInput.addEventListener("keyup", handleKeyup);
+      pwInput.addEventListener("blur", handleConfirmBlur);
+    }
+
+    var pwConfirmInput = document.getElementById("passwordConfirm");
+    if (pwConfirmInput) {
+      pwConfirmInput.addEventListener("blur", handleConfirmBlur);
+      pwConfirmInput.addEventListener("focus", handleConfirmFocus);
+    }
+
+    var registerButton = document.getElementById("register-button");
+    if (registerButton) {
+      registerButton.addEventListener("click", handleFormSubmit);
+    }
+
+    var changePWButton = document.getElementById("change-pw-button");
+    if (changePWButton) {
+      changePWButton.addEventListener("click", handleFormSubmit);
+      changePWButton.addEventListener("click", handleChangePasswordGA);
+    }
+
+    var agreeToTermsInput = document.getElementById(
+      "agree-to-terms-checkbox"
+    );
+    if (agreeToTermsInput) {
+      agreeToTermsInput.addEventListener("click", handleClickAgreeToTerms);
+    }
+
+    //Account Already Exists-GA
+    document.addEventListener("TealiumLoaded", function () {
+      var accountExists = document.getElementById("email-exists-error");
+      if (accountExists) {
+        CustomUtagLink({
+          event_category: "My Account",
+          event_action: "Create Account",
+          event_label: "Account Already Exists",
+        });
+      }
+    });
+  });
+</script>
+</head>
+<body>
+<!-- Tealium Universal Tag -->
+<script type="text/javascript">
+  (function (a, b, c, d) {
+    a = "//tags.tiqcdn.com/utag/americanhomeshield/ahs/prod/utag.js";
+    b = document;
+    c = "script";
+    d = b.createElement(c);
+    d.src = a;
+    d.type = "text/java" + c;
+    d.async = true;
+    a = b.getElementsByTagName(c)[0];
+    a.parentNode.insertBefore(d, a);
+
+    // uses onload, for modern browsers
+    d.onload = function () {
+      if (!d.onloadDone) {
+        d.onloadDone = true;
+        var event = new CustomEvent("TealiumLoaded");
+        document.dispatchEvent(event);
+      }
+    };
+
+    // uses onreadystatechange, for IE9
+    d.onreadystatechange = function () {
+      if (
+        ("loaded" === d.readyState || "complete" === d.readyState) &&
+        !d.onloadDone
+      ) {
+        d.onloadDone = true;
+        var event = new CustomEvent("TealiumLoaded");
+        document.dispatchEvent(event);
+      }
+    };
+  })();
+
+  function CustomUtagLink(data) {
+    if (typeof g_agentProfile !== "undefined" && g_agentProfile) {
+      data.event_category += " [Agent Emulator]";
+    }
+
+    if (
+      typeof utag != "undefined" &&
+      utag &&
+      typeof utag.link == "function"
+    ) {
+      return utag.link(data);
+    }
+  }
+</script>
+<meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="application-name" content="myAccount AHS" />
+    <meta name="author" content="myAccount AHS" />
+    <meta name="description" content="myAccount AHS Login" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="theme-color" content="#ffffff" />
+
+    <script src="/js/prime-min-1.4.1.js?version=1.36.6"></script>
