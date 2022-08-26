@@ -1,582 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Login | MyAccount AHS</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <!-- Custom -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-<!--<header>
-<a href="https://www.ahs.com/">
-<img src="https://cdn.frontdoorhome.com/iam-fusionauth/prod/static/images/ahs-logo.svg" alt="logo" />
-</a>
-</header>-->
-  
-<div>
-  <div class="content">
-    <h3 class="content-header">Manage your Home Warranty</h3>
-{% comment %} <div>
-  <p class="light-text">
-    Are you a Real Estate Professional? 
-  <a id="link-re-portal" class="re-portal-link" 
-     onClick="CustomUtagLink({
-                event_category: 'My Account',
-                event_action: 'Login and Registration',
-                event_label: 'Click on Login to REP-AHS'
-                }); 
-              return true;" 
-     href="https://pro.ahs.com">Log&nbsp;in&nbsp;here</a>
-  </p>
-</div> {% endcomment %}
+    <title>AHS</title>
+    <head>
+      <title>Login | MyAccount AHS</title>
+  </head>
 
-	<form action="authorize" method="POST" class="full">
-  <input type="hidden" name="client_id" value="d51d8f50-21db-4658-b87c-cd69327ddeb7" />
-  <input type="hidden" name="code_challenge" value="E9p0HLqA09Rru_vbpUKgTwB30YPJDs4h862Nc5Wwwdg" />
-  <input type="hidden" name="code_challenge_method" value="S256" />
-  <input type="hidden" name="metaData.device.name" value="" />
-  <input type="hidden" name="metaData.device.type" value="UNKNOWN" />
-  <input type="hidden" name="nonce" value="" />
-  <input type="hidden" name="redirect_uri" value="https://myaccount.ahs.com/login" />
-  <input type="hidden" name="response_mode" value="query" />
-  <input type="hidden" name="response_type" value="code" />
-  <input type="hidden" name="scope" value="openid email profile" />
-  <input type="hidden" name="state" value="ea6d60d362bf400c83000f6daf54e14e" />
-  <input type="hidden" name="tenantId" value="e48665ad-e5ca-4610-a9b0-b38757d8e2e1" />
-  <input type="hidden" name="timezone" value="" />
-  <input type="hidden" name="user_code" value="" />
-  <input type="hidden" name="showPasswordField" value="true" />
-
-<div class="form-row">
-<label for="loginId"><span class="required">*</span> Email</label>  <input id="loginId" type="text" name="loginId" value="" class="" autocapitalize="none" autocomplete="on" autocorrect="off" spellcheck="false" autofocus="autofocus" placeholder="@mail.com" />
-</div>
-<div class="form-row">
-<label for="password">
-  <span class="required">*</span> Password
-</label>  
-<input id="password" type="password" name="password"  class="" autocapitalize="none" autocomplete="current-password" autocorrect="off" spellcheck="false"  placeholder="********" />
-      <div id="toggle-password-visible" class="toggle-password-visible"></div>
-</div>
-		  <div class="lower-login-inputs">
-{% comment %} <a class="forgot-password-link" id="forgot-password-link" href="###">
-			  Forgot Password?
-</a> {% endcomment %}
-
-  <div class="remember-me-container">
-    <input type="checkbox" id="remember-me-input" class="remember-me-input" />
-    <label for="remember-me-input" class="remember-me-text">remember me</label>
-  </div>
-		  </div>
-
-        <div>
-<button  class="primary" id="login-btn">Log in to MyAccount</button>
-
+  <body>
+    <section id="login" class="bg-light py-5">
+      <div class="container">
+        <div class="content">
+          <h3 class="content-header">Manage your Home Warranty</h3>
         </div>
-      </form>
-      <div>
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4><i class="fas fa-sign-in-alt"></i> Login</h4>
+              </div>
+              <div class="card-body">
+                {% include 'partials/_alerts.html' %}
+                <form action="{% url 'login' %}" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="username">Email</label>
+                    <input
+                    id="login" type="text" name="login" value="" class="" autocapitalize="none" autocomplete="on" autocorrect="off" spellcheck="false" autofocus="autofocus" placeholder="@mail.com" required/>
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="password2">Password</label>
+                    <input
+                    id="password2" type="password" name="password2"  class="" autocapitalize="none" autocomplete="current-password" autocorrect="off" spellcheck="false"  placeholder="********" required/>
+                  </div>
+    
+                  <input
+                    type="submit"
+                    value="Login"
+                    class="btn btn-secondary btn-block"
+                  />
+                </form>
+                <div class="remember-me-container">
+                  <input type="checkbox" id="remember-me-input" class="remember-me-input" />
+                  <label for="remember-me-input" class="remember-me-text">remember me</label>
+                </div>
+
+                <div class="content-divider"></div>
+          
+                <div>
+                  <p class="light-text">Don't have an account yet?</p>
+                  <a class="" id="" href="/accounts/register">
+                  <button  class="secondary" id="register-btn">Create Account</button>
+                  </a>
+        
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="content-divider"></div>
-      
-      <div>
-        <p class="light-text">Don't have an account yet?</p>
-<a class="" id="" href="/accounts/register">
-<button  class="secondary" id="register-btn">Create Account</button>
-</a>
-
-	  </div>
-  </div>
-</div>
+    </section>
 
 
-</body>
+    <script src="assets/js/jquery-3.3.1.min.js "></script>
+    <script src="assets/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/js/main.js "></script>
+  </body>
 </html>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="application-name" content="myAccount AHS">
-  <meta name="author" content="myAccount AHS">
-  <meta name="description" content="myAccount AHS Login">
-  <meta name="robots" content="index, follow">
-
-  <meta name="theme-color" content="#ffffff">
-
-  <script src="/js/prime-min-1.4.1.js?version=1.36.6"></script>
-  
-  <style>
-    button {
-      background-color: #003E68;
-      border-color: #003E68;
-    }
-    
-    button.secondary {
-      color: #003E68;
-  	  border: 2px solid #003E68;
-    }
-    
-    .forgot-password-link {
-      color: #003E68;
-    }
-    
-    .re-portal-link {
-      color: #003E68;
-    }
-    
-    .employee-login a {
-      color: #003E68;
-      font-weight: 500;
-    }
-    
-    .toggle-password-visible {
-      background-image: url("data:image/svg+xml,%3Csvg enable-background='new -0.709 -32.081 141.732 141.732' height='141.732px' fill='%23003E68' id='Livello_1' version='1.1' viewBox='-0.709 -32.081 141.732 141.732' width='141.732px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Livello_80'%3E%3Cpath d='M89.668,38.786c0-10.773-8.731-19.512-19.51-19.512S50.646,28.01,50.646,38.786c0,10.774,8.732,19.511,19.512,19.511 C80.934,58.297,89.668,49.561,89.668,38.786 M128.352,38.727c-13.315,17.599-34.426,28.972-58.193,28.972 c-23.77,0-44.879-11.373-58.194-28.972C25.279,21.129,46.389,9.756,70.158,9.756C93.927,9.756,115.036,21.129,128.352,38.727 M140.314,38.76C125.666,15.478,99.725,0,70.158,0S14.648,15.478,0,38.76c14.648,23.312,40.591,38.81,70.158,38.81 S125.666,62.072,140.314,38.76'/%3E%3C/g%3E%3Cg id='Livello_1_1_'/%3E%3C/svg%3E");
-    }
-  </style>
-  
-  <style>
-    @keyframes rotate360 {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-body {
-  margin: 0;
-  font-family: sans-serif;
-
-}
-
-header {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-header img {
-  max-height: 60px;
-  max-width: 250px;
-}
-
-.content {
-  max-width: 450px;
-  margin: auto;
-  padding: 32px;
-}
-
-input[type=text], input[type=password] {
-  box-sizing: border-box;
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
-  font-size: 16px;
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-}
-
-::-webkit-input-placeholder {
-  color: #9E9E9E;
-  font-weight: 300;
-}
-
-.form-row {
-  margin: 24px 0;
-  position: relative;
-}
-
-.content-header {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-button {
-  width: 100%;
-  padding: 18px;
-  font-size: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-button.primary {
-  color: #ffffff;
-}
-
-button.secondary {
-  background-color: #ffffff;
-}
-
-.btn-loading {
-	cursor: default;
-	padding-left: 10px;
-	pointer-events: none;
-}
-
-.btn-loading::before {
-		animation: rotate360 0.8s infinite linear;
-		border: 3px solid rgba(255, 255, 255, 0.2);
-		border-left-color: #ffffff;
-		border-radius: 50%;
-		content: attr(data);
-		display: inline-block;
-		height: 20px;
-		margin-right: 20px;
-		margin-top: -2px;
-		vertical-align: middle;
-		width: 20px;
-}
-
-label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.content-divider {
-  border-bottom: 2px solid #E7E7E7;
-  margin: 36px 0;
-}
-
-p {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 300;
-  color: #636363;
-}
-
-.forgot-password-link {
-  display: inline-block;
-}
-
-.toggle-password-visible {
-  position: absolute;
-  top: 33px;
-  right: 12px;
-  cursor: pointer;
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 30px;
-  height: 25px;
-}
-
-#email-is-invalid {
-  display: none;
-}
-
-span.error {
-  color: #ef3829;
-  font-weight: 300;
-  font-size: 14px;
-}
-
-.agree-to-terms-container {
-  margin-bottom: 24px;
-  display: flex;
-  position: relative;
-}
-
-.agree-to-terms-container label {
-  font-weight: 300;
-}
-
-.agree-to-terms-container input {
-  margin-right: 12px;
-}
-
-.agree-to-terms-error {
-  display: none;
-  position: absolute;
-  bottom: -18px;
-  left: 4px;
-  font-size: 12px;
-  color: #ef3829;
-}
-
-div.error {
-  display: flex;
-  flex-direction: column;
-  border-left: 8px solid #D3302E;
-  max-width: 430px;
-  margin: auto;
-  padding: 24px 48px;
-  margin-top: 12px;
-  box-shadow: 0 6px 9px 1px rgba(0, 0, 0, 0.17);
-  background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/prod/static/images/warning-icon.png);
-  background-repeat: no-repeat;
-  background-position: 16px 35px;
-  background-size: 22px;
-  font-size: 15px;
-}
-
-div.info {
-  display: flex;
-  max-width: 430px;
-  margin: auto;
-  padding: 24px 30px;
-  margin-top: 12px;
-  background-color: #F2F2F2;
-  font-size: 15px;
-}
-
-div.info::before {
-	filter: brightness(0);
-  	background-image: url(https://cdn.frontdoorhome.com/iam-fusionauth/prod/static/images/info-circle.svg);
-  	background-repeat: no-repeat;
-  	background-size: 20px 20px;
-  	content: attr(data);
-  	height: 20px;
-  	width: 40px;
-  	position: relative;
-  	top: 15px;
-  	right: 5px;
-}
-
-.error-link {
-  color:#2774AE;
-  font-size:14px;
-  text-decoration:none;
-  font-weight:600;
-  margin-top:12px;
-}
-
-.lower-login-inputs {
-  display: flex;
-  justify-content: space-between;
-  height: 48px;
-}
-
-.remember-me-container {
-  display: flex;
-  align-items: center;
-  height: 14px;
-  width: 110px;
-  justify-content: space-between;
-}
-
-.remember-me-text {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-/* branded footer styles */
-
-.branded-footer-link {
-  color: #2774AE;
-  font-size:14px;
-}
-
-.branded-footer-phone-container {
-  display: none;
-}
-
-.branded-footer-link {
-  margin-right: 6px;
-}
-
-@media only screen and (min-width: 450px) {
-  .branded-footer-container {
-    display: flex;
-    justify-content: space-between;
-    bottom: 0;
-    padding: 12px 48px;
-  }
-  
-  .branded-footer-split {
-    display: none;
-  }
-  
-  .branded-footer-link {
-    color: #202A45;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  
-  .branded-footer-phone-container {
-    display: flex;
-    align-items: center;
-    border-left: 1px solid #E3E3E3;
-    padding: 0 24px;
-    color: #2774AE;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  
-  .branded-footer-right-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .branded-footer-copyright {
-    display: none;
-  }
-  
-  .branded-footer-link {
-    margin-right: 24px;
-  }
-}
-
-/* end branded footer styles */
-  </style>
-
-    <script src="/js/jstz-min-1.0.6.js"></script>
-    <script src="/js/oauth2/Authorize.js?version=1.36.6"></script>
-    <script>
-      Prime.Document.onReady(function() {
-        new FusionAuth.OAuth2.Authorize();
-        var panel = Prime.Document.queryFirst('.panel');
-        if (panel !== null) {
-          FusionAuth = FusionAuth || {};
-          FusionAuth.IdentityProvider = FusionAuth.IdentityProvider || {};
-          FusionAuth.IdentityProvider.InProgress = new Prime.Widgets.InProgress(panel);
-        }
-      });
-    </script>
-
-	<script>
-	  function handleLogin() {
-		var loginIdInput = document.getElementById("loginId");
-		if (loginIdInput) { loginIdInput.value = loginIdInput.value.trim(); }
-	  }
-
-	  function storeLoginId() {
-		var rememberMeInput = document.getElementById("remember-me-input");
-		if (rememberMeInput && rememberMeInput.checked) {
-		  var loginIdInput = document.getElementById("loginId");
-		  if (loginIdInput) {
-			var loginId = loginIdInput.value
-			if (loginId) {
-              CustomUtagLink({
-                 event_category: 'My Account',
-                 event_action: 'Remember Me',
-                 event_label: 'Remember Me click on login page'
-              }); 
-              document.cookie = "loginId=" + loginId; }
-		  }
-		}
-	  }
-      
-       function handleCreateAccountGA() {       
-        CustomUtagLink({
-              event_category: 'My Account',
-              event_action: 'Create Your Account',
-              event_label: 'Create Your Account Selected'
-            });      
-      }
-      
-      function handleForgotPwdGA(){
-           CustomUtagLink({
-              event_category: 'My Account',
-              event_action: 'Reset Password',
-              event_label: 'Forgot Password Click on Login Page'
-            });   
-      }
-
-	  document.addEventListener("DOMContentLoaded", function() {
-		var loginBtn = document.getElementById("login-btn");
-		if (loginBtn) {
-		  loginBtn.addEventListener('click', handleLogin)
-		  loginBtn.addEventListener('click', storeLoginId)
-		}
-
-		var loginIdMatch = document.cookie.match('(^|;)\\s*' + 'loginId' + '\\s*=\\s*([^;]+)')
-		if (loginIdMatch) {
-			var loginIdInput = document.getElementById("loginId");
-			loginIdInput.value = loginIdMatch[loginIdMatch.length-1];
-		}
-        
-        //Forgot Pwd in Login Page- GA
-        var forgotPwdBtn = document.getElementById("forgot-password-link");
-        if (forgotPwdBtn){
-          forgotPwdBtn.addEventListener('click', handleForgotPwdGA)
-        }
-        
-        //Create Account in Login Page- GA
-        var createAccountBtn = document.getElementById("register-btn");
-        if (createAccountBtn){
-          createAccountBtn.addEventListener('click', handleCreateAccountGA)
-        }
-        
-        //Invalid Login-GA
-        document.addEventListener('TealiumLoaded', function () {    
-          var invalidLogin = document.getElementById('auth-error')
-          if (invalidLogin) {
-            CustomUtagLink({
-               event_category: 'My Account',
-               event_action: 'My Account Errors',
-               event_label: 'Invalid Login Credentials'
-             });
-           }     
-        });
-		
-	  })
-	</script>
-
-<script>
-  function togglePasswordVisible() {
-    var pwInput = document.getElementById("password");
-    if (pwInput.type === "password") {
-      pwInput.type = "text";
-    } else {
-      pwInput.type = "password";
-    }
-  }
- 
-   function togglePasswordConfirmVisible() {
-    var pwInput = document.getElementById("passwordConfirm");
-    if (pwInput.type === "password") {
-      pwInput.type = "text";
-    } else {
-      pwInput.type = "password";
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
-    var pwToggle = document.getElementById('toggle-password-visible')
-    pwToggle.addEventListener('click', togglePasswordVisible)
-    var pwConfirmToggle = document.getElementById('toggle-password-confirm-visible')
-    pwConfirmToggle && pwConfirmToggle.addEventListener('click', togglePasswordConfirmVisible)
-  });
-</script>
-
-
-</head>
-<body>
-  <!-- Tealium Universal Tag -->
-  <script type="text/javascript"> 
-  (function(a,b,c,d) {
-    a='//tags.tiqcdn.com/utag/americanhomeshield/ahs/prod/utag.js';
-    b=document;c='script';d=b.createElement(c);d.src=a;
-    d.type='text/java'+c;d.async=true;
-    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    
-    // uses onload, for modern browsers
-			d.onload = function() {
-			    if (! d.onloadDone) {
-			        d.onloadDone = true;
-                   var event = new CustomEvent('TealiumLoaded')     
-                   document.dispatchEvent(event)
-			    }
-			};
-    
-         // uses onreadystatechange, for IE9
-			d.onreadystatechange = function() {
-			    if ( ( "loaded" === d.readyState || "complete" === d.readyState ) && ! d.onloadDone ) {
-			        d.onloadDone = true;
-			        var event = new CustomEvent('TealiumLoaded')     
-                    document.dispatchEvent(event)
-			    }
-			}
-    
-  })();
-    
-  function CustomUtagLink(data) {
-	if (typeof g_agentProfile !== 'undefined' && g_agentProfile) {
-		data.event_category += ' [Agent Emulator]'
-	}
-	
-	if (typeof utag != 'undefined' && utag && typeof utag.link == 'function') {
-		return utag.link(data);
-	}
-  } 
-    
-  </script>
