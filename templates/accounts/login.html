@@ -12,7 +12,7 @@
 <div>
   <div class="content">
     <h3 class="content-header">Manage your Home Warranty</h3>
-<div>
+{% comment %} <div>
   <p class="light-text">
     Are you a Real Estate Professional? 
   <a id="link-re-portal" class="re-portal-link" 
@@ -24,7 +24,7 @@
               return true;" 
      href="https://pro.ahs.com">Log&nbsp;in&nbsp;here</a>
   </p>
-</div>
+</div> {% endcomment %}
 
 	<form action="authorize" method="POST" class="full">
   <input type="hidden" name="client_id" value="d51d8f50-21db-4658-b87c-cd69327ddeb7" />
@@ -44,16 +44,19 @@
   <input type="hidden" name="showPasswordField" value="true" />
 
 <div class="form-row">
-<label for="loginId"><span class="required">*</span> Email</label>  <input id="loginId" type="text" name="loginId" value="" class="" autocapitalize="none" autocomplete="on" autocorrect="off" spellcheck="false" autofocus="autofocus" placeholder="jsmith@gmail.com" />
+<label for="loginId"><span class="required">*</span> Email</label>  <input id="loginId" type="text" name="loginId" value="" class="" autocapitalize="none" autocomplete="on" autocorrect="off" spellcheck="false" autofocus="autofocus" placeholder="@mail.com" />
 </div>
 <div class="form-row">
-<label for="password"><span class="required">*</span> Password</label>  <input id="password" type="password" name="password"  class="" autocapitalize="none" autocomplete="current-password" autocorrect="off" spellcheck="false"  placeholder="********" />
+<label for="password">
+  <span class="required">*</span> Password
+</label>  
+<input id="password" type="password" name="password"  class="" autocapitalize="none" autocomplete="current-password" autocorrect="off" spellcheck="false"  placeholder="********" />
       <div id="toggle-password-visible" class="toggle-password-visible"></div>
 </div>
 		  <div class="lower-login-inputs">
-<a class="forgot-password-link" id="forgot-password-link" href="/password/forgot?tenantId=e48665ad-e5ca-4610-a9b0-b38757d8e2e1&client_id=d51d8f50-21db-4658-b87c-cd69327ddeb7&nonce=&redirect_uri=https%3A%2F%2Fmyaccount.ahs.com%2Flogin&response_mode=query&response_type=code&scope=openid%20email%20profile&state=ea6d60d362bf400c83000f6daf54e14e&timezone=&metaData.device.name=&metaData.device.type=UNKNOWN&code_challenge=E9p0HLqA09Rru_vbpUKgTwB30YPJDs4h862Nc5Wwwdg&code_challenge_method=S256&user_code=">
+{% comment %} <a class="forgot-password-link" id="forgot-password-link" href="###">
 			  Forgot Password?
-</a>
+</a> {% endcomment %}
 
   <div class="remember-me-container">
     <input type="checkbox" id="remember-me-input" class="remember-me-input" />
@@ -73,7 +76,7 @@
       
       <div>
         <p class="light-text">Don't have an account yet?</p>
-<a class="" id="" href="register?tenantId=e48665ad-e5ca-4610-a9b0-b38757d8e2e1&client_id=d51d8f50-21db-4658-b87c-cd69327ddeb7&nonce=&redirect_uri=https%3A%2F%2Fmyaccount.ahs.com%2Flogin&response_mode=query&response_type=code&scope=openid%20email%20profile&state=ea6d60d362bf400c83000f6daf54e14e&timezone=&metaData.device.name=&metaData.device.type=UNKNOWN&code_challenge=E9p0HLqA09Rru_vbpUKgTwB30YPJDs4h862Nc5Wwwdg&code_challenge_method=S256&user_code=">
+<a class="" id="" href="/accounts/register">
 <button  class="secondary" id="register-btn">Create Account</button>
 </a>
 
