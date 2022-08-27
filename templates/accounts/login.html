@@ -15,9 +15,9 @@
           </div>
           <div class="card-body">
             <!-- alerts -->
-            {% comment %} {% include 'partials/_alerts.html' %}
+            {% include 'partials/_alerts.html' %}
             <form action="{% url 'login' %}" method="POST">
-              {% csrf_token %} {% endcomment %}
+              {% csrf_token %}
 
               <!-- auth token -->
               <div class="form-group">

@@ -51,7 +51,7 @@
 <!-- login account related section and update the hightlight link -->
       <ul class="navbar-nav ml-auto">
         <!-- if login then show logout -->
-        {% comment %} {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
         <!-- copy the register li and rename to dashboard -->
         <li 
         {% if 'dashboard' in request.path %} 
@@ -61,6 +61,7 @@
         {% endif %}
           <a class="nav-link" href="{% url 'dashboard' %}">welcome {{ user.username }} (Dashboard)</a>
         </li>
+        
         <!-- add logout form -->
         <li class="nav-item mr-3">
           <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
@@ -70,7 +71,7 @@
               <input tpye="hidden">
             </form>
         </li>
-          {% else %}  {% endcomment %}
+        {% else %} 
           <!-- not login yet then show both login and register -->
         
           <li
@@ -91,7 +92,7 @@
             <a class="nav-link" href="{% url 'login' %}">
             <i class="fas fa-sign-in-alt"></i>Login</a>
         </li>
-        {% comment %} {% endif %} {% endcomment %} 
+       {% endif %}
       </ul>
     </div>
   </div>

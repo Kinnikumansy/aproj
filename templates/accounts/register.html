@@ -15,13 +15,13 @@
           </div>
           <div class="card-body">
             <!-- alerts -->
-            
-            <!-- {% include 'partials/_alerts.html' %} -->
+
+            {% include 'partials/_alerts.html' %}
             <!-- add route and method -->
 
-            <!-- <form action="{% url 'register' %}" method="POST"> -->
+            <form action="{% url 'register' %}" method="POST">
               <!-- auth token -->
-              
+
               {% csrf_token %}
               <div class="form-group">
                 <label for="first_name">First Name</label>
