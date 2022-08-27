@@ -8,3 +8,11 @@ from django.template import loader
 
 def index(request):
     return render(request, "pages/index.html", {})
+
+
+def plan(request):
+    return render(request, "pages/plan.html", {})
+
+
+def blog(request):
+    return render(request, "pages/blog.html", {})

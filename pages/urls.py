@@ -4,4 +4,7 @@ from .import views
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('plan/',views.plan, name="plan"),
+    path('blog/',views.blog, name="blog"),
+    
 ]
