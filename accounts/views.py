@@ -2,8 +2,8 @@ from urllib import response
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-#from contacts.models import Contact
-
+from django.core.mail import send_mail
+from contacts. models import Contact
 # Create your views here.
 
 
@@ -46,7 +46,6 @@ def register(request):
             messages.error(request, "Password do not match")
             return redirect('register')
     else:
-
         return render(request, 'accounts/register.html')
 
 
@@ -59,7 +58,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'You are logging in !')
-            response = redirect('/inquiry')
+            response = redirect('inquiry')
             return response
             # return redirect('index')
         else:
@@ -72,10 +71,10 @@ def login(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        messages.success(request, "You are now logging out !")
-        response = redirect('/')
-        return response
-        # return redirect('/index')
+        # messages.success(request, "Cick Logout Button")
+    response = redirect('/')
+    return response
+    # return redirect('/index')
 
 
 def dashboard(request):

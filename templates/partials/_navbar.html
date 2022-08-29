@@ -68,7 +68,7 @@
             <i class="fas fa-sign-out-alt"></i>Logout</a>
             <form action="{% url 'logout' %}" method="POST" id="logout">
               {% csrf_token %}
-              <input tpye="hidden">
+              {% comment %} <input tpye="hidden"> {% endcomment %}
             </form>
         </li>
         {% else %} 
