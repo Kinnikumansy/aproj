@@ -11,16 +11,19 @@ def inquiry(request):
 
 
 def contact(request):
-    # if request.method == "POST":
-    name = request.POST['name']
-    email = request.POST['email']
-    phone = request.POST['phone']
-    address = request.POST['address']
-    message = request.POST['message']
-    member = Contact.objects.all().filter()
-    member = Contact(name=name, email=email, phone=phone,
-                     address=address, message=message)
-    member.save()
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        address = request.POST['address']
+        message = request.POST['message']
+        member = Contact.objects.all().filter()
+        member = Contact(name=name, email=email, phone=phone,
+                         address=address, message=message)
+        member.save()
+        # messages.success(
+        #     request, 'Your request has been submitted, we will get back to you soon')
+        return render(request, "accounts/dashboard.html")
 
     # if request.user.is_authenticated:
     #     user_id = request.user.id
@@ -30,13 +33,8 @@ def contact(request):
     #         messages.error(request, "You have already made an inquiry")
     #         response = redirect('contact')
     #         return response
-    #         # return render('contacts/contact.html')
-    # contact = Contact(contact_id=contact_id, name=name, email=email,
-    #                   phone=phone, address=address, message=message, user_id=user_id)
-    # contact.save()
+        # return render('contacts/contact.html')
 
-    # messages.success(
-    #     request, 'Your request has been submitted, we will get back to you soon')
     # response = redirect('contact')
     # return response
-    return render(request, "accounts/dashboard.html")
+    return render(request, "contacts/inquiry.html")
