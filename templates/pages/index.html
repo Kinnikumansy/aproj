@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% load static %}
+{% extends 'base.html' %} {% load humanize %}
 {% block content %}
 
-
+<!-- created by uni-->
 
 <div class="card">
   <img src="static/img/index/ahs.jpg" alt="" class="img-fluid">
@@ -28,9 +28,6 @@
       <p class="text-center text-1">Air conditioning units, Heating units, &amp;heat pumps</p>
     </div>
   </div>
-        
-
-
 
   <div class="card text-center">
     <img src="static/img/index/es.png" alt="" class="img-ml" style="width:200px;">       
@@ -97,8 +94,8 @@
 
 
 
-
-<div id="homeWarrantyInfoSection.Main" class="container px-4 md:px-16 xl:px-48">
+<!-- Description -->
+<div class="container">
   <div class="text-base">
   <div id="homeWarrantyInfoSection.Items">
   <div>
@@ -150,9 +147,7 @@
   <br>
   
   <div class="container">
-    <a class="btn btn-info"
-      data-toggle="collapse"
-      href="#demo" role="button"> Read more</a>
+    <a  href="#demo" class="btn btn-info" data-toggle="collapse"> Read more</a>
 
       <!-- <button
         type="button"
@@ -162,10 +157,9 @@
       >
         Read more
       </button> -->
-      <div class="row">
-        <div class="col">
+      
           <div id="demo" class="collapse">
-            <div class="card card-body">
+           
               <h2>WHY DO I NEED ONE?</h2> 
               <p>
               The short answer is that home warranty
@@ -225,18 +219,18 @@
               percentile of U.S. costs according to a nationwide survey of
               homeowners conducted in 2019 by ClearVantage for American
               Home Shield. </p> 
-            </div>
-          </div>
-        </div>
+            
+        
       </div>
   </div>
   
 </div>   
+
 <br>
 <br>
 
 <!-- #our member -->
-<div class="container-xl">
+<div class="container">
        
  <div class="card-columns" style="width: 1500px;">
    <div class="container-xl">
@@ -253,7 +247,7 @@
                      >
                      OUR MEMBERS GET MORE.
                      </h2>
-                     <div class="px-4 my-3 text-base xl:p-0 text-center lg:text-left">
+                     <div class="px-4 my-3 text-base xl:p-0 text-left lg:text-left">
                      All home warranties are not created equal. Our Shield Assurances
                      are always included, even in our base plans. This means you’ll
                      get protection for:
@@ -261,18 +255,9 @@
                      <div class="px-4 my-6 xl:p-0 xl:my-10">
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                    
+                     <img src="static/img/index/t.png" alt="" style="width:30px;">
+                   
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Older items, no matter their age</span
@@ -280,18 +265,7 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                      <img src="static/img/index/t.png" alt="" style="width:30px;">
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Undetectable pre-existing conditions</span
@@ -299,18 +273,9 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                     
+                     <img src="static/img/index/t.png" alt="" style="width:30px;">
+                     
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Items without maintenance records</span
@@ -318,18 +283,7 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                      <img src="static/img/index/t.png" alt="" style="width:30px;">
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Breakdowns caused by lack of maintenance</span
@@ -337,18 +291,7 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                      <img src="static/img/index/t.png" alt="" style="width:30px;">
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Improper installations, repairs or modifications</span
@@ -356,18 +299,7 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                      <img src="static/img/index/t.png" alt="" style="width:30px;">
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Malfunctions due to sediment, rust or corrosion</span
@@ -375,18 +307,7 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                      <img src="static/img/index/t.png" alt="" style="width:30px;">
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Removal of old, defective items</span
@@ -394,23 +315,14 @@
                      </div>
                      <div class="flex mb-2 align-items-center xl:mb-4">
                      <span>
-                     <svg
-                     fill="currentcolor"
-                     viewBox="0 0 24 24"
-                     class="text-primary mr-3 OurMembersSection_ourMembersMainIcon__ZI87p"
-                     width="24"
-                     height="24"
-                     >
-                     <path
-                                 fill-rule="evenodd"
-                                 d="M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm2 0a9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9zm6.796 1.921l6.114-6.24a.6.6 0 01.859 0l.558.573a.6.6 0 01-.001.839l-7.09 7.237a.6.6 0 01-.852.005L6.732 13.69a.6.6 0 01.007-.856l.574-.557a.6.6 0 01.841.007l1.642 1.637z"
-                     ></path>
-                     </svg>
+                      <img src="static/img/index/t.png" alt="" style="width:30px;">
                      </span>
                      <span class="text-base font-bold text-ahs-blue"
                      >Duplicates of the same item, like that extra A/C unit</span
                      >
                      </div>
+
+                    
          </div>
          </div>
        </div>
@@ -421,149 +333,164 @@
      
 </div>
 </div>
+
 <br>
 <br>
 
 
 <!-- Inquiry Modal -->
+<div class="container">
+  <div class="col-md-3">
+  <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>
+  </div>
 
-  
-    
-      <div class="modal-header">
-        <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
-        <button type="button" class="close" data-dismiss="modal">
-          <span>&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
+  <div class="modal fade" id="inquiryModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action= "{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+          {% if user.is_authenticated %}
+          <input type="hidden" name="user_id" value="{{user.id}}" />
+          {% else %}
+          <input type="hidden" name="user_id" value="0" />
+          {% endif %}
+          <input type="hidden" name="listing_id" value="{{listing.id}}" />
           <div class="form-group">
-            <label for="property_name" class="col-form-label">Property:</label>
-            <input type="text" name="listing" class="form-control" value="45 Drivewood Cirlce" disabled>
-          </div>
-          <div class="form-group">
-            <label for="name" class="col-form-label">Name:</label>
-            <input type="text" name="name" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="email" class="col-form-label">Email:</label>
-            <input type="email" name="email" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="phone" class="col-form-label">Phone:</label>
-            <input type="text" name="phone" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="message" class="col-form-label">Message:</label>
-            <textarea name="message" class="form-control"></textarea>
-          </div>
-          <hr>
-          <input type="submit" value="Send" class="btn btn-block btn-secondary">
-        </form>
+            <div class="form-group">
+              <label for="name" class="col-form-label">Name:</label>
+              <input type="text" name="name" class="form-control" {% if user.is_authenticated %}
+              value= "{{user.first_name}} {{user.last_name}}" {% endif %} required/>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-form-label">Email:</label>
+              <input type="email" name="email" class="form-control" {% if user.is_authenticated %}
+              value= "{{user.email}}" {% endif %} required />
+            </div>
+            <div class="form-group">
+              <label for="phone" class="col-form-label">Phone:</label>
+              <input type="text" name="phone" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="message" class="col-form-label">Message:</label>
+              <textarea name="message" class="form-control"></textarea>
+            </div>
+            <hr />
+            <input type="submit" value="Send" class="btn btn-block btn-secondary" />
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+  </div> 
 </div>
+
+
+
+
 <br>
 <br>
 
 <!-- owners-->
 <div class="container">
   <div class="card">
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">
-        <h4>
-          Homeowners
-        </h4>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#" class="btn" role="button">
-        Why should I buy a warranty?
-      </a></td>
-      <td><a href="#" class="btn" role="button">
-        Buying or selling a home?
-      </a></td>
-      <td><a href="/accounts/login" class="btn" role="button">
-        Log in to MyAccount
-      </a></td>
-      <td>
-        <a href="#" class="btn" role="button">
-          Schedule a repair
-        </a>
-      </td>
-    </tr>
-  </tbody>
-  </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">
+            <h4>
+              Homeowners
+            </h4>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" class="btn" role="button">
+            Why should I buy a warranty?
+          </a></td>
+          <td><a href="#" class="btn" role="button">
+            Buying or selling a home?
+          </a></td>
+          <td><a href="/accounts/login" class="btn" role="button">
+            Log in to MyAccount
+          </a></td>
+          <td>
+            <a href="#" class="btn" role="button">
+              Schedule a repair
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="card">
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">
-        <h4>
-          Real estate agents
-        </h4>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#" class="btn" role="button">
-        Why partner with AHS?
-      </a></td>
-      <td><a href="/accounts/login" class="btn" role="button">
-        Partner Portal login
-      </a></td>
-      <td><a href="/accounts/register" class="btn" role="button">
-        Register for an account 
-        </a></td>
-      <td><a href="#" class="btn" role="button">
-        Buy a real estate plan
-      </a></td>
-    </tr>
-  </tbody>
-  </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">
+            <h4>
+              Real estate agents
+            </h4>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" class="btn" role="button">
+            Why partner with AHS?
+          </a></td>
+          <td><a href="/accounts/login" class="btn" role="button">
+            Partner Portal login
+          </a></td>
+          <td><a href="/accounts/register" class="btn" role="button">
+            Register for an account 
+            </a></td>
+          <td><a href="#" class="btn" role="button">
+            Buy a real estate plan
+          </a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
 
   <div class="card">
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">
-        <h4>
-          Contractors & Techs
-        </h4>
-      </th>
-    </tr>
-  </thead>
-  <tbody>   
-    <tr>
-      <td><a href="#" class="btn" role="button">
-        Become a tech
-      </a></td>
-      <td><a href="/accounts/register" class="btn" role="button">
-        Register for an account
-      </a></td>
-      <td><a href="#" class="btn" role="button">
-        About our contractor network
-      </a></td>
-      <td><a href="/accounts/login" class="btn" role="button">
-        Contractor dashboard login
-      </a></td>
-    </tr>
-  </tbody>
-  </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">
+            <h4>
+              Contractors & Techs
+            </h4>
+          </th>
+        </tr>
+      </thead>
+      <tbody>   
+        <tr>
+          <td><a href="#" class="btn" role="button">
+            Become a tech
+          </a></td>
+          <td><a href="/accounts/register" class="btn" role="button">
+            Register for an account
+          </a></td>
+          <td><a href="#" class="btn" role="button">
+            About our contractor network
+          </a></td>
+          <td><a href="/accounts/login" class="btn" role="button">
+            Contractor dashboard login
+          </a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
-<br>
-<br>
 <br>
 
 

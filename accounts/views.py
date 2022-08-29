@@ -49,14 +49,14 @@ def login(request):
             return redirect('login')
     else:
         return render(request, 'accounts/login.html')
-
+# created by uni
 
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         messages.success(request, "you are now logging out ! ")
         return redirect('index')
-
+# created by uni
 
 def dashboard(request):
     user_contacts = Contact.objects.order_by(
@@ -65,3 +65,4 @@ def dashboard(request):
         'contacts': user_contacts
     }
     return render(request, 'accounts/dashboard.html', context)
+# created by uni

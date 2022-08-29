@@ -1,6 +1,3 @@
-from django.urls import path
-from . import views
+from django.test import TestCase
 
-urlpatterns = [
-    path('contact', views.contact, name="contact"),
-]
+# Create your tests here.

@@ -6,6 +6,8 @@ from . models import Contact
 
 # Create your views here.
 
+# created by uni
+
 
 def contact(request):
     if request.method == "POST":
@@ -16,7 +18,6 @@ def contact(request):
         phone = request.POST['phone']
         message = request.POST['message']
         user_id = request.POST['user_id']
-        realtor_email = request.POST['realtor_email']
 
         if request.user.is_authenticated:
             user_id = request.user.id
@@ -31,7 +32,7 @@ def contact(request):
                           email=email, phone=phone, message=message, user_id=user_id)
         contact.save()
 
-        # send_mail
+        send_mail
         print(
             f"'Listing Inquiry','Inquiry for' + listing + '. Sign into admin for more info','ryan@ryan',[realtor_email, 'ryan@ryan'], fail_silently=False")
         messages.success(
