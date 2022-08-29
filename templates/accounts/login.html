@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/css/all.css" />
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css" />
-    <!-- Custom -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+{% extends "base.html" %}
+<!--dfdf-->
+{% block title %} | Account Login {% endblock%} {% block content %}
 
-    <title>AHS</title>
-    <head>
-      <title>Login | MyAccount AHS</title>
+  <title>AHS</title>
+  <head>
+    <title>Login | MyAccount AHS</title>
   </head>
 
   <body>
     <section id="login" class="bg-light py-5">
       <div class="container">
-        <div class="content">
-          <h3 class="content-header">Manage your Home Warranty</h3>
+        <div class="content float-none">
+          <h3 class="content-header text-xl-center ">Manage your Home Warranty</h3>
         </div>
         <div class="row">
           <div class="col-md-6 mx-auto">
@@ -72,9 +63,6 @@
       </div>
     </section>
 
+{% endblock %}
 
-    <script src="assets/js/jquery-3.3.1.min.js "></script>
-    <script src="assets/js/bootstrap.bundle.min.js "></script>
-    <script src="assets/js/main.js "></script>
-  </body>
-</html>
+
